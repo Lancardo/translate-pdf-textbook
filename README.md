@@ -11,6 +11,7 @@ It was distilled from a full technical-book translation workflow where the hard 
 - Uses Chinese technical terms with English originals in parentheses, such as `二次谐波产生（second-harmonic generation, SHG）`.
 - Places figures and tables inline near the corresponding translated discussion.
 - Encourages natural Chinese technical prose instead of mechanical sentence-by-sentence translation.
+- Uses a chapter-level acceptance gate before moving to the next major section.
 - Requires evidence-based verification before calling a translation complete.
 
 ## Repository Structure
@@ -98,6 +99,7 @@ Use $translate-pdf-textbook. Translate the English PDF in this project into a co
 - Keep source page numbers available for auditing.
 - Use standard Chinese terminology, but preserve useful English originals.
 - Recreate or place every figure and table.
+- Require each chapter to pass source coverage, figure/table inventory, build/log, and PDF text gates before continuing.
 - Compile early and often.
 - Treat final completion as unproven until coverage, logs, PDF text, and visual layout are checked.
 
