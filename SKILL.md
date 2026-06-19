@@ -51,7 +51,12 @@ Treat the source PDF as authoritative. OCR and extracted text are aids; inspect 
    - Extract text from the generated PDF and search for untranslated prose, missing terminology, old/incorrect terms, and representative corrected passages.
    - Render representative pages or contact sheets to visually check figure/table placement, blank pages, clipping, overlap, and whether the source PDF was accidentally appended.
 
-8. **Close only with evidence.**
+8. **Use a chapter acceptance gate.**
+   - Do not move from one chapter or major section to the next until the current unit passes four checks: source-page coverage, figure/table inventory, successful compilation, and generated-PDF text extraction.
+   - Record gate evidence in `PROGRESS.md`: source page range covered, expected vs actual figures/tables, build/log result, PDF text spot checks, and any unresolved risks.
+   - If a gate fails, fix the current unit before broadening scope. Do not hide failed checks as "later cleanup" unless the user explicitly accepts the risk.
+
+9. **Close only with evidence.**
    - Before claiming completion, prove coverage for all source pages with content, all expected figures/tables, all major structural sections, and the current generated PDF.
    - Update progress notes with the exact output PDF path, page count, creation time, checks run, and remaining risks.
    - If a broad full-book semantic review is requested, do not mark the goal complete until the current-state evidence covers the full book.
