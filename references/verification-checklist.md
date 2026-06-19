@@ -30,6 +30,33 @@ rg -n '\\includegraphics|\\caption|表 [0-9A-Z]|图 [0-9A-Z]' translation *.tex
 pdftotext output.pdf - | rg -n '图 [0-9]|表 [0-9]|附录'
 ```
 
+## Chapter Acceptance Gate
+
+Before moving from a chapter or major section to the next one, require all four checks below to pass and record the evidence in the progress note.
+
+1. Source-page coverage:
+   - The chapter's source page range is known.
+   - Every nonblank source page in that range has a translated destination marker or an explicit reason it is intentionally unmapped.
+
+2. Figure/table inventory:
+   - Expected figure and table numbers for the chapter are listed.
+   - Every expected figure/table is either reconstructed in LaTeX or included as an image near its discussion.
+   - Captions and table headings are translated.
+
+3. Build/log gate:
+   - The project compiles after the chapter is added.
+   - Strict log scan shows no LaTeX errors, missing characters, undefined references, citation gaps, fatal stops, emergency stops, or rerun requests.
+
+4. PDF text gate:
+   - `pdftotext` can extract the chapter's representative translated text.
+   - Search confirms no `TODO`, `待翻译`, long untranslated prose, or known wrong terminology in the chapter.
+
+Recommended progress-note format:
+
+```text
+Chapter N gate: source pages X-Y covered; figures a.b-a.c present; tables a.b-a.c present; build OK; strict log scan OK; PDF text spot checks OK; risks: none.
+```
+
 ## Build Log Gate
 
 Run the project build command, then scan the log. Treat the following as blockers unless they are already understood and harmless.
